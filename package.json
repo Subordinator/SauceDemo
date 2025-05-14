@@ -6,7 +6,10 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {},
+  "scripts": {
+    "clean": "rimraf playwright-report test-results",
+    "test": "npm run clean && playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Subordinator/SauceDemo.git"

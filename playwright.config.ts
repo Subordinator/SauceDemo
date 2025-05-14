@@ -13,7 +13,7 @@ export default defineConfig({
   ],
 
   use: {
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure'
   },
 
   projects: [
@@ -25,39 +25,50 @@ export default defineConfig({
 
     /*
     {
-      name: 'Microsoft Edge • Desktop',
+      name: 'Microsoft Edge Desktop',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
     */
     
     {
-      name: 'Google Chrome • Desktop',
+      name: 'Google Chrome Desktop',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
 
     {
-      name: 'Google Chrome • Pixel 5',
-      use: { ...devices['Pixel 5'] },
+      name: 'Google Chrome Mobile',
+      use: {
+        ...devices['Pixel 5'],
+        headless: true,
+      },
     },
 
+    // WebKit Engine Error
+    // - See BUGS_FOUND.md for more details.
+    // - Therefore, skipping this test for now.
+
+    /*
     {
       name: 'Webkit Engine',
       use: { ...devices['Desktop Safari'] },
     },
     
     {
-      name: 'Safari • iPhone 12',
-      use: { ...devices['iPhone 12'] },
+      name: 'Safari Mobile',
+      use: {
+        ...devices['iPhone 12'],
+        headless: true,
+      },
     },
+    */
 
     {
-      name: 'Firefox',
+      name: 'Firefox Desktop',
       use: { ...devices['Desktop Firefox'] },
     },
 
   ],
 
-  /* Run your local dev server before starting the tests */
   // webServer: {
   //   command: 'npm run start',
   //   url: 'http://127.0.0.1:3000',

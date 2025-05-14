@@ -1,5 +1,7 @@
 ﻿import { test, expect } from '@playwright/test';
 
+// Scenario: Valid Login Credentials
+// Rationale: Verifies that users can log in with correct credentials (critical path).
 test('Valid Login Credentials', async ({ page }) => {
   await page.goto('https://www.saucedemo.com/v1/');
   await page.locator('[data-test="username"]').fill('standard_user');
