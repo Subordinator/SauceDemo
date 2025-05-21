@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Subordinator/SauceDemo#readme",
   "devDependencies": {
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.17"
+    "@types/node": "^22.15.17",
+    "rimraf": "^6.0.1"
   }
 }
