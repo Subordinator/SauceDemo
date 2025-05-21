@@ -7,7 +7,11 @@
 - **Impact:** All tests fail on WebKit.
 - **Workaround:** Tests are skipped for WebKit until this is resolved. Testing in Hyper-V, Macintosh is viable.
 
+---
+
 ### Placeholder Product Name in List Bug
+
+**Severity:** LOW
 
 **Description:**  
 Product list is visible after login shows "Test.allTheThings() T-Shirt (Red)".
@@ -29,7 +33,11 @@ Product list is visible after login shows "Test.allTheThings() T-Shirt (Red)".
 **Recommendation:**
 - Review product data for placeholder/test names and update to production-ready values.
 
+---
+
 ### Placeholder Product Description Bug
+
+**Severity:** LOW
 
 **Description:**  
 On the product detail page for `id=4`, the description reads:  
@@ -51,7 +59,11 @@ On the product detail page for `id=4`, the description reads:
 **Recommendation:**
 - Update product descriptions to remove placeholder/test phrases and use finalized content.
 
+---
+
 ### Back Button Hover Cursor Missing Bug
+
+**Severity:** LOW
 
 **Description:**  
 On a product detail page, the "Back" button does not change the cursor to a pointer (hand) on hover.
@@ -72,7 +84,11 @@ On a product detail page, the "Back" button does not change the cursor to a poin
 **Recommendation:**
 - Update the button's CSS to use `cursor: pointer` on hover.
 
+---
+
 ### Session Not Fully Cleared on Logout
+
+**Severity:** URGENT
 
 **Description:**  
 After logging out, using the browser's back button allows the user to access the inventory page without re-authenticating.
