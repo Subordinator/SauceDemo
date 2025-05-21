@@ -19,9 +19,12 @@ This project demonstrates a functional test automation approach for [Sauce Labs 
 ### Test Plan
 
 See [`tests/TEST_PLAN.md`](tests/TEST_PLAN.md) for:
-- Types of functional tests prioritized (input validation, boundary, user flows)
-- Rationale for test selection
-- Automation strategy
+- Types of functional tests prioritized (input validation, boundary, user flows).
+- Rationale for test selection.
+- Automation strategy.
+
+See [`tests/TEST_SCHEDULE.md`](tests/TEST_SCHEDULE.md) for:
+- Test execution schedule of manual and automated test runs.
 
 ### Test Automation
 
@@ -39,9 +42,9 @@ Each test case is documented with its scenario and rationale in code comments.
 ### Bugs & Issues
 
 See [`tests/BUGS_FOUND.md`](tests/BUGS_FOUND.md) for:
-- Steps to reproduce
-- Expected vs. actual results
-- Impact on testing
+- Steps to reproduce.
+- Expected vs. actual results.
+- Impact on testing.
 
 ### Rationale & Tools
 
@@ -94,7 +97,14 @@ npx playwright show-report
 ```
 *Opens an interactive HTML report of the latest test run in your browser.*
 
+**4. Use Playwright Codegen (for exploratory/manual script creation):**
+```
+npx playwright codegen https://www.saucedemo.com/v1/
+```
+*Launches Playwright's interactive code generator, to record user actions on the site and generate test scripts automatically. Useful for quickly prototyping or exploring flows before formalising automated tests.*
+
 **Outcome:**  
 - All core user flows are tested automatically.
 - Test results and coverage are visible in the Playwright HTML report.
+- For a record of test execution and scheduling, see [`/tests/TEST_SCHEDULE.md`](tests/TEST_SCHEDULE.md).
 - Any failures or bugs are logged and can be reviewed in `/tests/BUGS_FOUND.md`.
