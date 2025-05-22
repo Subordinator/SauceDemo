@@ -13,6 +13,7 @@ This project demonstrates a functional test automation approach for [Sauce Labs 
 - [Test Automation](#test-automation)
 - [Dependencies](#dependencies)
 - [How to Run](#how-to-run)
+- [Repository Structure](#repository-structure)
 - [Bugs & Issues](#bugs--issues)
 - [Rationale & Tools](#rationale--tools)
 
@@ -108,3 +109,31 @@ npx playwright codegen https://www.saucedemo.com/v1/
 - Test results and coverage are visible in the Playwright HTML report.
 - For a record of test execution and scheduling, see [`/tests/TEST_SCHEDULE.md`](tests/TEST_SCHEDULE.md).
 - Any failures or bugs are logged and can be reviewed in [`/tests/BUGS_FOUND.md`](tests/BUGS_FOUND.md).
+
+### Repository Structure
+
+```
+SauceDemo/
+├── .github/
+│   └── workflows/
+│       └── playright.yml
+├── node_modules/
+├── playwright-report/
+├── test-results/
+├── tests/
+│   ├── BUGS_FOUND.md
+│   ├── cart.spec.ts
+│   ├── checkout.spec.ts
+│   ├── login.invalid.spec.ts
+│   ├── login.valid.spec.ts
+│   ├── sample.spec.ts
+│   ├── sorting.spec.ts
+│   ├── TEST_PLAN.md
+│   └── TEST_SCHEDULE.md
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── playwright.config.ts
+├── tsconfig.json
+└── readme.md
+```
