@@ -1,7 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -11,30 +10,23 @@ export default defineConfig({
     ['html', { outputFolder: 'playwright-report' }],
     ['json', { outputFile: 'playwright-report/report.json' }],
   ],
-
   use: {
-    trace: 'retain-on-failure'
+    trace: 'retain-on-failure',
+    baseURL: 'https://www.saucedemo.com/v1/',
   },
-
   projects: [
-
     {
       name: 'Chromium Engine',
       use: { ...devices['Desktop Chrome'] },
     },
-
-    /*
     {
       name: 'Microsoft Edge Desktop',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
-    */
-    
     {
       name: 'Google Chrome Desktop',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
-
     {
       name: 'Google Chrome Mobile',
       use: {
@@ -42,17 +34,10 @@ export default defineConfig({
         headless: true,
       },
     },
-
-    // WebKit Engine Error
-    // - See BUGS_FOUND.md for more details.
-    // - Therefore, skipping this test for now.
-
-    /*
     {
       name: 'Webkit Engine',
       use: { ...devices['Desktop Safari'] },
     },
-    
     {
       name: 'Safari Mobile',
       use: {
@@ -60,19 +45,9 @@ export default defineConfig({
         headless: true,
       },
     },
-    */
-
     {
       name: 'Firefox Desktop',
       use: { ...devices['Desktop Firefox'] },
     },
-
   ],
-
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
-
 });

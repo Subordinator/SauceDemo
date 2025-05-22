@@ -107,4 +107,4 @@ npx playwright codegen https://www.saucedemo.com/v1/
 - All core user flows are tested automatically.
 - Test results and coverage are visible in the Playwright HTML report.
 - For a record of test execution and scheduling, see [`/tests/TEST_SCHEDULE.md`](tests/TEST_SCHEDULE.md).
-- Any failures or bugs are logged and can be reviewed in `/tests/BUGS_FOUND.md`.
+- Any failures or bugs are logged and can be reviewed in [`/tests/BUGS_FOUND.md`](tests/BUGS_FOUND.md).
