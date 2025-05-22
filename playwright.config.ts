@@ -10,23 +10,29 @@ export default defineConfig({
     ['html', { outputFolder: 'playwright-report' }],
     ['json', { outputFile: 'playwright-report/report.json' }],
   ],
+
   use: {
     trace: 'retain-on-failure',
     baseURL: 'https://www.saucedemo.com/v1/',
   },
+
   projects: [
+
     {
       name: 'Chromium Engine',
       use: { ...devices['Desktop Chrome'] },
     },
+
     {
       name: 'Microsoft Edge Desktop',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
+
     {
       name: 'Google Chrome Desktop',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
+
     {
       name: 'Google Chrome Mobile',
       use: {
@@ -34,6 +40,7 @@ export default defineConfig({
         headless: true,
       },
     },
+
     /*
     WebKit Engine has been disabled due to an established error.
     Severity has been marked as high and is being investigated.
@@ -41,7 +48,8 @@ export default defineConfig({
       name: 'WebKit Engine',
       use: { ...devices['Desktop Safari'] },
     },
-    */
+
+    Safari Mobile has also been disabled due to failing builds.
     {
       name: 'Safari Mobile',
       use: {
@@ -49,9 +57,13 @@ export default defineConfig({
         headless: true,
       },
     },
+    */
+
     {
       name: 'Firefox Desktop',
       use: { ...devices['Desktop Firefox'] },
     },
+
   ],
+
 });
