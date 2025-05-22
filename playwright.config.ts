@@ -34,10 +34,14 @@ export default defineConfig({
         headless: true,
       },
     },
+    /*
+    WebKit Engine has been disabled due to an established error.
+    Severity has been marked as high and is being investigated.
     {
-      name: 'Webkit Engine',
+      name: 'WebKit Engine',
       use: { ...devices['Desktop Safari'] },
     },
+    */
     {
       name: 'Safari Mobile',
       use: {

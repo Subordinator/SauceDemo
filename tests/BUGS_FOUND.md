@@ -1,11 +1,35 @@
 ### WebKit Engine Error
 
-- **System:** Microsoft Windows 10 Enterprise 2016 LTSB (x64). nodejs v22.15.0. npm v11.3.0. playwright v1.52.0.
-- **Steps to Reproduce:** Run any automated test using the 'Webkit Engine' project.
-- **Expected Result:** The test should open the page and proceed.
-- **Actual Result:** Fails with `Error: browserContext.newPage: Target page, context or browser has been closed`.
-- **Impact:** All tests fail on WebKit.
-- **Workaround:** Tests are skipped for WebKit until this is resolved. Testing in Hyper-V, Macintosh is viable.
+**Severity:** HIGH
+
+**System:**  
+- Microsoft Windows 10 Enterprise 2016 LTSB (x64)  
+- Node.js v22.15.0  
+- npm v11.3.0  
+- Playwright v1.52.0  
+- Also tested: Safari 15.6.1 on macOS (within Hyper-V)
+
+**Steps to Reproduce:**  
+- Run any automated test using the 'Webkit Engine' project on Windows.  
+- On macOS (Hyper-V), open Safari 15.6.1 and attempt to log in with any username/password combination.
+
+**Expected Result:**  
+- The test should open the page and proceed through login.  
+- Manual login in Safari should allow progression past the login page.
+
+**Actual Result:**  
+- On Windows: Fails with `Error: browserContext.newPage: Target page, context or browser has been closed`.  
+- On macOS/Safari: The login screen loads, but after entering credentials (via Enter key or clicking the login button), the page does not progress past the login screen.
+
+**Impact:**  
+- All automated tests fail on WebKit (Windows).  
+- Manual and automated login is blocked on Safari 15.6.1 (macOS/Hyper-V), regardless of username/password.
+- Possible that all Safari users are affected. Further investigation is required posthaste.
+
+**Workaround:**  
+- Tests are skipped for WebKit until this is resolved.  
+- Testing in other browsers (Chromium, Firefox) is viable.  
+- Safari on physical Mac hardware may need to be tested to rule out Hyper-V specific issues.
 
 ---
 
@@ -105,7 +129,3 @@ After logging out, using the browser's back button allows the user to access the
 - User can view the inventory page and browse products after logout by navigating back in browser history.
 
 **Impact:**
-- Session is not fully cleared, which is a security risk and may allow unauthorized access to protected pages.
-
-**Recommendation:**
-- Ensure session and authentication state are fully cleared on logout. Prevent access to authenticated pages via browser history after logout.
